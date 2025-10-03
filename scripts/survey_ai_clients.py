@@ -11,8 +11,14 @@ import requests
 from datetime import datetime
 from pathlib import Path
 
+from dotenv import load_dotenv
+from requests.exceptions import RequestException
+
 # 프로젝트 루트 디렉토리
 ROOT_DIR = Path(__file__).parent.parent
+
+# .env 파일이 있으면 로드해 환경변수를 보완한다.
+load_dotenv()
 
 
 def load_cache():
@@ -138,30 +144,39 @@ def main():
     full_prompt = survey_prompt.replace('{current_date}', current_date)
     full_prompt = full_prompt.replace('{cache_count}', str(len(cache)))
 
+    ai_response = None
     try:
         ai_response = call_openrouter_api(full_prompt)
         print("✅ AI 응답 수신 완료")
-
-        # 4. 결과 파싱 및 병합 (여기서는 간단히 텍스트 저장)
-        # 실제로는 JSON 파싱 로직 필요
-
-        # 5. 보고서 생성
-        report = generate_report(cache)
-        report_file = ROOT_DIR / "docs" / "REPORT.md"
-        report_file.parent.mkdir(exist_ok=True)
-        with open(report_file, 'w', encoding='utf-8') as f:
-            f.write(report)
-        print(f"📄 보고서 생성: {report_file}")
-
-        # 6. 캐시 저장
-        save_cache(cache)
-        print("💾 캐시 저장 완료")
-
-        print("\n✅ 조사 완료!")
-
-    except Exception as e:
-        print(f"❌ 오류 발생: {e}")
+    except ValueError as exc:
+        print(f"⚠️ {exc}")
+        print("⚙️ API 호출 없이 기존 캐시 기반으로 보고서를 생성합니다.")
+    except RequestException as exc:
+        print(f"❌ OpenRouter API 호출 실패: {exc}")
+        print("⚙️ API 없이 캐시 데이터로 보고서를 생성합니다.")
+    except Exception as exc:
+        print(f"❌ 예기치 않은 오류 발생: {exc}")
         raise
+
+    # 4. 결과 파싱 및 병합 (여기서는 간단히 텍스트 저장)
+    # 실제로는 JSON 파싱 로직 필요
+
+    # 5. 보고서 생성
+    report = generate_report(cache)
+    report_file = ROOT_DIR / "docs" / "REPORT.md"
+    report_file.parent.mkdir(exist_ok=True)
+    with open(report_file, 'w', encoding='utf-8') as f:
+        f.write(report)
+    print(f"📄 보고서 생성: {report_file}")
+
+    # 6. 캐시 저장
+    save_cache(cache)
+    print("💾 캐시 저장 완료")
+
+    if ai_response:
+        print("\n✅ 조사 완료!")
+    else:
+        print("\n✅ 조사 완료 (API 응답 없이 캐시 기반)")
 
 
 if __name__ == "__main__":
