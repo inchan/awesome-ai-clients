@@ -9,11 +9,7 @@
       "method": "pip",
       "command": "pip install aider-chat"
     },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
+    "platforms": ["macOS", "Windows", "Linux"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "오픈소스 AI 페어 프로그래밍 CLI"
@@ -28,11 +24,7 @@
       "method": "npm",
       "command": "npm install -g @githubnext/github-copilot-cli"
     },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
+    "platforms": ["macOS", "Windows", "Linux"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "GitHub Copilot 구독 기반 CLI"
@@ -47,11 +39,7 @@
       "method": "brew",
       "command": "brew install --cask ollama"
     },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
+    "platforms": ["macOS", "Windows", "Linux"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "로컬 LLM 실행용 CLI"
@@ -66,11 +54,7 @@
       "method": "pip",
       "command": "pip install openai"
     },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
+    "platforms": ["macOS", "Windows", "Linux"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "OpenAI 공식 CLI"
@@ -85,11 +69,7 @@
       "method": "pip",
       "command": "pip install anthropic"
     },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
+    "platforms": ["macOS", "Windows", "Linux"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "Claude API용 공식 CLI"
@@ -104,11 +84,7 @@
       "method": "npm",
       "command": "npm install -g cohere-cli"
     },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
+    "platforms": ["macOS", "Windows", "Linux"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "Cohere 모델 제어 CLI"
@@ -123,11 +99,7 @@
       "method": "pip",
       "command": "pip install llm"
     },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
+    "platforms": ["macOS", "Windows", "Linux"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "확장 가능한 오픈소스 LLM CLI"
@@ -142,9 +114,7 @@
       "method": "direct",
       "command": "웹사이트에서 최신 설치 파일 다운로드"
     },
-    "platforms": [
-      "macOS"
-    ],
+    "platforms": ["macOS"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "Anthropic 공식 데스크톱 앱"
@@ -159,9 +129,7 @@
       "method": "direct",
       "command": "App Store 또는 공식 페이지에서 설치"
     },
-    "platforms": [
-      "macOS"
-    ],
+    "platforms": ["macOS"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "OpenAI 공식 데스크톱 앱"
@@ -176,10 +144,7 @@
       "method": "direct",
       "command": "공식 사이트에서 dmg 다운로드"
     },
-    "platforms": [
-      "macOS",
-      "Windows"
-    ],
+    "platforms": ["macOS", "Windows"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "Perplexity 검색 데스크톱 앱"
@@ -194,11 +159,7 @@
       "method": "direct",
       "command": "공식 사이트에서 설치 프로그램 다운로드"
     },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
+    "platforms": ["macOS", "Windows", "Linux"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "AI 통합 IDE"
@@ -213,10 +174,7 @@
       "method": "direct",
       "command": "공식 사이트에서 설치 프로그램 다운로드"
     },
-    "platforms": [
-      "macOS",
-      "Windows"
-    ],
+    "platforms": ["macOS", "Windows"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "Codeium의 AI IDE"
@@ -231,10 +189,7 @@
       "method": "direct",
       "command": "공식 사이트에서 설치 프로그램 다운로드"
     },
-    "platforms": [
-      "macOS",
-      "Windows"
-    ],
+    "platforms": ["macOS", "Windows"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "Replit 공식 데스크톱 앱"
@@ -249,11 +204,7 @@
       "method": "npm",
       "command": "npm install -g continue-cli"
     },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
+    "platforms": ["macOS", "Windows", "Linux"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "CLI와 IDE 확장을 모두 지원하는 도구"
@@ -268,165 +219,9 @@
       "method": "direct",
       "command": "VS Code Marketplace 또는 CLI에서 설치"
     },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
+    "platforms": ["macOS", "Windows", "Linux"],
     "is_standalone": true,
     "verified_date": "2025-10-04",
     "notes": "VS Code와 CLI를 넘나드는 AI 어시스턴트"
-  },
-  "GPT4All": {
-    "name": "GPT4All",
-    "status": "rejected",
-    "type": "desktop",
-    "official_site": "https://gpt4all.io/",
-    "github": "https://github.com/nomic-ai/gpt4all",
-    "installation": {
-      "method": "direct",
-      "command": "다운로드 후 앱 설치"
-    },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
-    "is_standalone": false,
-    "verified_date": "2025-10-04",
-    "notes": "AI 제안: 추가 검증 필요 로컬에서 작동하는 AI 챗봇"
-  },
-  "StableDiffusion_CLI": {
-    "name": "StableDiffusion_CLI",
-    "status": "rejected",
-    "type": "cli",
-    "official_site": "https://github.com/CompVis/stable-diffusion",
-    "github": "https://github.com/CompVis/stable-diffusion",
-    "installation": {
-      "method": "pip",
-      "command": "pip install stable-diffusion"
-    },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
-    "is_standalone": false,
-    "verified_date": "2025-10-04",
-    "notes": "AI 제안: 추가 검증 필요 이미지 생성을 위한 CLI 도구"
-  },
-  "DVC_CLI": {
-    "name": "DVC_CLI",
-    "status": "rejected",
-    "type": "cli",
-    "official_site": "https://dvc.org/doc/command-reference",
-    "github": "https://github.com/iterative/dvc",
-    "installation": {
-      "method": "pip",
-      "command": "pip install dvc"
-    },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
-    "is_standalone": false,
-    "verified_date": "2025-10-04",
-    "notes": "AI 제안: 추가 검증 필요 데이터 버전 관리를 위한 CLI 도구"
-  },
-  "PyTorch_CLI": {
-    "name": "PyTorch_CLI",
-    "status": "rejected",
-    "type": "cli",
-    "official_site": "https://pytorch.org/get-started/locally/",
-    "github": "https://github.com/pytorch/pytorch",
-    "installation": {
-      "method": "pip",
-      "command": "pip install torch"
-    },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
-    "is_standalone": false,
-    "verified_date": "2025-10-04",
-    "notes": "AI 제안: 추가 검증 필요 딥러닝 프레임워크를 위한 CLI 도구"
-  },
-  "Jina_CLI": {
-    "name": "Jina_CLI",
-    "status": "rejected",
-    "type": "cli",
-    "official_site": "https://docs.jina.ai/cli/",
-    "github": "https://github.com/jina-ai/jina",
-    "installation": {
-      "method": "pip",
-      "command": "pip install jina"
-    },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
-    "is_standalone": false,
-    "verified_date": "2025-10-04",
-    "notes": "AI 제안: 추가 검증 필요 클라우드 및 로컬에서 작동하는 AI 서비스를 위한 CLI 도구"
-  },
-  "MLflow_CLI": {
-    "name": "MLflow_CLI",
-    "status": "rejected",
-    "type": "cli",
-    "official_site": "https://mlflow.org/docs/latest/cli.html",
-    "github": "https://github.com/mlflow/mlflow",
-    "installation": {
-      "method": "pip",
-      "command": "pip install mlflow"
-    },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
-    "is_standalone": false,
-    "verified_date": "2025-10-04",
-    "notes": "AI 제안: 추가 검증 필요 머신 러닝 실험 추적을 위한 CLI 도구"
-  },
-  "AWS_CLI": {
-    "name": "AWS_CLI",
-    "status": "rejected",
-    "type": "cli",
-    "official_site": "https://aws.amazon.com/cli/",
-    "github": "https://github.com/aws/aws-cli",
-    "installation": {
-      "method": "pip",
-      "command": "pip install awscli"
-    },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
-    "is_standalone": false,
-    "verified_date": "2025-10-04",
-    "notes": "AI 제안: 추가 검증 필요 AWS 서비스 관리를 위한 CLI 도구"
-  },
-  "Azure_CLI": {
-    "name": "Azure_CLI",
-    "status": "rejected",
-    "type": "cli",
-    "official_site": "https://docs.microsoft.com/en-us/cli/azure/",
-    "github": "https://github.com/Azure/azure-cli",
-    "installation": {
-      "method": "brew",
-      "command": "brew install azure-cli"
-    },
-    "platforms": [
-      "macOS",
-      "Windows",
-      "Linux"
-    ],
-    "is_standalone": false,
-    "verified_date": "2025-10-04",
-    "notes": "AI 제안: 추가 검증 필요 Azure 서비스 관리를 위한 CLI 도구"
   }
 }

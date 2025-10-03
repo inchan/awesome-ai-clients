@@ -38,6 +38,10 @@ jobs:
         run: |
           pip install -r scripts/requirements.txt
 
+      - name: ✅ Smoke test (offline)
+        run: |
+          python scripts/survey_ai_clients.py --offline
+
       - name: 🔍 Run AI survey
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
