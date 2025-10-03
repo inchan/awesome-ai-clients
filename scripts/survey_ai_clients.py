@@ -148,6 +148,12 @@ def main():
     try:
         ai_response = call_openrouter_api(full_prompt)
         print("✅ AI 응답 수신 완료")
+        # API 응답 내용을 디버깅용으로 로그 파일에 저장한다.
+        debug_log = ROOT_DIR / "logs" / "openrouter_response.jsonl"
+        debug_log.parent.mkdir(exist_ok=True)
+        timestamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+        with debug_log.open("a", encoding="utf-8") as fp:
+            fp.write(f"[{timestamp}]\n{ai_response}\n")
     except ValueError as exc:
         print(f"⚠️ {exc}")
         print("⚙️ API 호출 없이 기존 캐시 기반으로 보고서를 생성합니다.")
