@@ -1,0 +1,82 @@
+name: AI Client Survey
+
+on:
+  schedule:
+    # 매주 월요일 오전 9시 (UTC) = 한국 시간 18시
+    - cron: '0 9 * * 1'
+
+  workflow_dispatch: # 수동 실행 가능
+
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/**'
+      - 'prompts/**'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  survey:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 Install dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: 🔍 Run AI survey
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          python scripts/survey_ai_clients.py
+
+      - name: 📊 Generate summary
+        run: |
+          echo "## 🤖 AI Survey Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Date**: $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f docs/REPORT.md ]; then
+            head -n 20 docs/REPORT.md >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 💾 Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: '🤖 Auto update: AI client survey [skip ci]'
+          file_pattern: 'data/*.json docs/*.md'
+          commit_user_name: 'AI Survey Bot'
+          commit_user_email: 'survey-bot@github-actions'
+          commit_author: 'AI Survey Bot <survey-bot@github-actions>'
+
+      - name: 📢 Create Pull Request (optional)
+        if: github.event_name == 'schedule'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: '🤖 Weekly AI client survey update'
+          title: '🤖 Weekly Survey: New AI Clients Detected'
+          body: |
+            ## 📊 Automated AI Client Survey
+
+            This PR contains the latest survey results.
+
+            **Trigger**: Scheduled (weekly)
+            **Date**: ${{ github.event.head_commit.timestamp }}
+
+            Please review the changes in `docs/REPORT.md`.
+          branch: 'automated-survey-${{ github.run_number }}'
+          delete-branch: true
